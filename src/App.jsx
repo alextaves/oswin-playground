@@ -1,30 +1,16 @@
-import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
-import { useRef } from 'react'
-
-function Box() {
-  const ref = useRef()
-  useFrame((_, delta) => {
-    ref.current.rotation.x += delta * 0.5
-    ref.current.rotation.y += delta * 0.5
-  })
-  return (
-    <mesh ref={ref}>
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color="#4a90d9" />
-    </mesh>
-  )
-}
+import { useState } from 'react'
+import Cubes from './Cubes'
+import SpinApp from './SpinApp'
+import PlaygroundHamburger from './PlaygroundHamburger'
 
 export default function App() {
+  const [experiment, setExperiment] = useState('cubes')
+
   return (
-    <div style={{ width: '100vw', height: '100vh', background: '#0a0a0a' }}>
-      <Canvas camera={{ position: [0, 0, 3] }}>
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[5, 5, 5]} intensity={1} />
-        <Box />
-        <OrbitControls />
-      </Canvas>
-    </div>
+    <>
+      <PlaygroundHamburger active={experiment} onSelect={setExperiment} />
+      {experiment === 'cubes' && <Cubes />}
+      {experiment === 'spin'  && <SpinApp />}
+    </>
   )
 }
