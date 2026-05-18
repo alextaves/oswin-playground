@@ -165,8 +165,8 @@ export default function Cubes() {
         <Scene scrollRef={scrollRef} cubes={cubes} mobile={mobile} />
       </Canvas>
       <div style={{
-        position: 'fixed', bottom: 32, left: '50%', transform: 'translateX(-50%)',
-        display: 'flex', alignItems: 'center', gap: 24,
+        position: 'fixed', top: 32, left: 28,
+        display: 'flex', flexDirection: 'column', gap: 10,
       }}>
         <span style={{ fontFamily: SANS, fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(0,0,0,0.25)', pointerEvents: 'none' }}>
           scroll or swipe to move
@@ -176,7 +176,7 @@ export default function Cubes() {
           style={{
             fontFamily: SANS, fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase',
             color: playing ? 'rgba(0,0,0,0.7)' : 'rgba(0,0,0,0.25)',
-            background: 'none', border: 'none', cursor: 'pointer', padding: 0,
+            background: 'none', border: 'none', cursor: 'pointer', padding: 0, textAlign: 'left',
           }}
         >
           {playing ? '■ sound' : '▶ sound'}
