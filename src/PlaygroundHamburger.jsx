@@ -3,8 +3,9 @@ import { useState } from 'react'
 const SANS = '"Helvetica Neue", Helvetica, Arial, sans-serif'
 
 const EXPERIMENTS = [
-  { name: 'cubes', label: 'Cubes' },
-  { name: 'spin',  label: 'Spin'  },
+  { name: 'cubes',      label: 'Cubes'                },
+  { name: 'spin',       label: 'Spin'                 },
+  { name: 'schoenberg', label: 'Schoenberg Playground' },
 ]
 
 export default function PlaygroundHamburger({ active, onSelect }) {

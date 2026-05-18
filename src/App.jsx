@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Cubes from './Cubes'
 import SpinApp from './SpinApp'
+import SchoenbergPlayground from './SchoenbergPlayground'
 import PlaygroundHamburger from './PlaygroundHamburger'
 
 export default function App() {
@@ -9,8 +10,9 @@ export default function App() {
   return (
     <>
       <PlaygroundHamburger active={experiment} onSelect={setExperiment} />
-      {experiment === 'cubes' && <Cubes />}
-      {experiment === 'spin'  && <SpinApp />}
+      {experiment === 'cubes'       && <Cubes />}
+      {experiment === 'spin'        && <SpinApp />}
+      {experiment === 'schoenberg'  && <SchoenbergPlayground />}
     </>
   )
 }
