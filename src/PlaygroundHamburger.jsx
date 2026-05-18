@@ -6,9 +6,6 @@ const EXPERIMENTS = [
   { name: 'cubes',      label: 'Cubes'                },
   { name: 'spin',       label: 'Spin'                 },
   { name: 'schoenberg', label: 'Schoenberg Playground' },
-  { name: 'siphon',     label: 'Siphon'               },
-  { name: 'hum',        label: 'Hum'                  },
-  { name: 'grafting',   label: 'Grafting'             },
 ]
 
 export default function PlaygroundHamburger({ active, onSelect }) {

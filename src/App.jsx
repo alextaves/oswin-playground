@@ -2,9 +2,6 @@ import { useState, useEffect } from 'react'
 import Cubes from './Cubes'
 import SpinApp from './SpinApp'
 import SchoenbergPlayground from './SchoenbergPlayground'
-import SiphonGallery from './SiphonGallery'
-import HumMixer from './HumMixer'
-import Grafting from './Grafting'
 import PlaygroundHamburger from './PlaygroundHamburger'
 
 const SANS = '"Helvetica Neue", Helvetica, Arial, sans-serif'
@@ -15,8 +12,7 @@ export default function App() {
   const [fading, setFading] = useState(false)
 
   useEffect(() => {
-    const scrollable = experiment === 'schoenberg' || experiment === 'hum'
-    document.body.style.overflow = scrollable ? 'auto' : 'hidden'
+    document.body.style.overflow = experiment === 'schoenberg' ? 'auto' : 'hidden'
     return () => { document.body.style.overflow = 'hidden' }
   }, [experiment])
 
@@ -52,9 +48,6 @@ export default function App() {
       {experiment === 'cubes'       && <Cubes />}
       {experiment === 'spin'        && <SpinApp />}
       {experiment === 'schoenberg'  && <SchoenbergPlayground />}
-      {experiment === 'siphon'      && <div style={{ position: 'fixed', inset: 0 }}><SiphonGallery active={true} /></div>}
-      {experiment === 'hum'         && <div style={{ position: 'fixed', inset: 0, overflowY: 'auto' }}><HumMixer /></div>}
-      {experiment === 'grafting'    && <div style={{ position: 'fixed', inset: 0 }}><Grafting /></div>}
     </>
   )
 }
