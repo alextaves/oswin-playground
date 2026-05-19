@@ -2,6 +2,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { useTexture, MeshReflectorMaterial } from '@react-three/drei'
 import { useRef, useEffect, useState } from 'react'
 import * as THREE from 'three'
+import * as Tone from 'tone'
 import Drone from './ShepardRisset'
 
 const isMobile = () => window.innerWidth < 768
@@ -172,7 +173,7 @@ export default function Cubes() {
           scroll or swipe to move
         </span>
         <button
-          onClick={() => setPlaying(p => !p)}
+          onClick={() => { Tone.start(); setPlaying(p => !p) }}
           style={{
             fontFamily: SANS, fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase',
             color: playing ? 'rgba(0,0,0,0.7)' : 'rgba(0,0,0,0.25)',

@@ -46,10 +46,8 @@ export default function Drone({ playing }) {
 
   useEffect(() => {
     if (playing && !wasPlayingRef.current) {
-      Tone.start().then(() => {
-        nodesRef.current.forEach(({ osc }) => osc.start())
-        masterRef.current.gain.rampTo(1, 4)
-      })
+      nodesRef.current.forEach(({ osc }) => osc.start())
+      masterRef.current.gain.rampTo(1, 4)
       wasPlayingRef.current = true
     } else if (!playing && wasPlayingRef.current) {
       masterRef.current.gain.rampTo(0, 3)
